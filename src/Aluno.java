@@ -14,6 +14,7 @@ public class Aluno {
 
     @Override
     public boolean equals(Object obj) {
+        if (obj == null) return false;
         Aluno outro = (Aluno) obj;
         return outro.getNome().equals(this.nome);
     }
