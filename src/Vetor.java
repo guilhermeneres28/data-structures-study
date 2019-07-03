@@ -10,14 +10,17 @@ public class Vetor {
         Quanto mais alunos tem no vetor mais demorada vai ser a insersão
         Complexidade: O(n) -> Pois inserir um aluno depende do numero de elementos existestes na lista
      */
-    /*public void adiciona(Aluno aluno) {
+
+    /*
+    public void adiciona(Aluno aluno) {
         for(int i = 0; i < alunos.length; i++) {
             if(alunos[i] == null) {
                 alunos[i] = aluno;
                 break;
             }
         }
-    }*/
+    }
+    */
 
     /*
         - Aqui temos um algoritmo de tempo constante pois estamos guardando sempre a posicao vazia em uma variavel
@@ -25,10 +28,6 @@ public class Vetor {
     public void adiciona(Aluno aluno) {
         this.alunos[totalDeAlunos] = aluno;
         totalDeAlunos++;
-    }
-
-    private boolean posicaoValida(int posicao) {
-        return posicao >= 0  && posicao <= totalDeAlunos;
     }
 
     /*
@@ -48,10 +47,6 @@ public class Vetor {
         alunos[posicao] = aluno;
     }
 
-    private boolean posicaoOcupada(int posicao) {
-        return posicao >= 0 && posicao < totalDeAlunos;
-    }
-
     public Aluno pega(int posicao) {
         if(!posicaoOcupada(posicao)) {
             throw new IllegalArgumentException("Posicao invalida");
@@ -60,13 +55,16 @@ public class Vetor {
     }
 
     public void remove(int posicao) {
-
+        for(int i = posicao; i < this.totalDeAlunos; i++) {
+            this.alunos[i] = this.alunos[i+1];
+        }
+        totalDeAlunos--;
     }
     /*
         A complexidade aqui sempre vai ser O(n) pois o tempo de execução varia de acordo com a quantidade de elementos
      */
     public boolean contem(Aluno aluno) {
-        for (int i = 0; i < alunos.length; i++) {
+        for (int i = 0; i < totalDeAlunos; i++) {
             if(aluno.equals(alunos[i])) {
                 return true;
             }
@@ -80,5 +78,14 @@ public class Vetor {
 
     public String toString() {
         return Arrays.toString(alunos);
+    }
+
+    // Verifica se posição no vetor está ocupada.
+    private boolean posicaoOcupada(int posicao) {
+        return posicao >= 0 && posicao < totalDeAlunos;
+    }
+
+    private boolean posicaoValida(int posicao) {
+        return posicao >= 0  && posicao <= totalDeAlunos;
     }
 }
