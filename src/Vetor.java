@@ -26,6 +26,7 @@ public class Vetor {
         - Aqui temos um algoritmo de tempo constante pois estamos guardando sempre a posicao vazia em uma variavel
      */
     public void adiciona(Aluno aluno) {
+        this.garanteEspaco();
         this.alunos[totalDeAlunos] = aluno;
         totalDeAlunos++;
     }
@@ -36,7 +37,7 @@ public class Vetor {
          - a complexidade aqui é O(n) pois tbm depende da quantidade de elementos no array
      */
     public void adiciona(int posicao, Aluno aluno) {
-
+        this.garanteEspaco();
         if(!posicaoValida(posicao)) {
             throw new IllegalArgumentException("posicao invalida");
         }
@@ -87,5 +88,15 @@ public class Vetor {
 
     private boolean posicaoValida(int posicao) {
         return posicao >= 0  && posicao <= totalDeAlunos;
+    }
+
+    private void garanteEspaco() {
+        if(totalDeAlunos == alunos.length) {
+            Aluno[] novoArray = new Aluno[alunos.length * 2];
+            for(int i = 0; i < alunos.length; i++) {
+                novoArray[i] = alunos[i];
+            }
+            this.alunos = novoArray;
+        }
     }
 }

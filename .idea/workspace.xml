@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="34909b1d-694f-45d1-bf42-4557a70b0a92" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/estrutura-dados/Aluno.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/estrutura-dados/Aluno.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/estrutura-dados/Vetor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/estrutura-dados/Vetor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/estrutura-dados/VetorTeste.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/estrutura-dados/VetorTeste.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aluno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vetor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vetor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VetorTeste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VetorTeste.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
