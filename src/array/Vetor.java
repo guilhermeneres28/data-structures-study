@@ -1,4 +1,7 @@
-import java.util.ArrayList;
+package array;
+
+import array.Aluno;
+
 import java.util.Arrays;
 
 public class Vetor {
@@ -12,7 +15,7 @@ public class Vetor {
      */
 
     /*
-    public void adiciona(Aluno aluno) {
+    public void adiciona(array.Aluno aluno) {
         for(int i = 0; i < alunos.length; i++) {
             if(alunos[i] == null) {
                 alunos[i] = aluno;

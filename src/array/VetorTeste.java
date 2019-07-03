@@ -1,3 +1,8 @@
+package array;
+
+import array.Aluno;
+import array.Vetor;
+
 public class VetorTeste {
 
     public static void main(String[] args) {
