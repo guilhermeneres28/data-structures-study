@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34909b1d-694f-45d1-bf42-4557a70b0a92" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vetor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vetor.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +40,7 @@
   </component>
   <component name="RunManager">
     <configuration name="VetorTeste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VetorTeste" />
+      <option name="MAIN_CLASS_NAME" value="array.VetorTeste" />
       <module name="estrutura-dados" />
       <method v="2">
         <option name="Make" enabled="true" />
