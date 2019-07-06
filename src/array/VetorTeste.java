@@ -13,7 +13,7 @@ public class VetorTeste {
         Aluno a5 = new Aluno("Jose");
         Aluno a6 = new Aluno("Jose");
 
-        Vetor lista = new Vetor();
+        Vetor lista = new Vetor(6);
 
         System.out.println("Tamanho da lista " + lista.tamanho());
         lista.adiciona(a1);

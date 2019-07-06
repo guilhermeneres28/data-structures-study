@@ -1,13 +1,20 @@
 package array;
 
-import array.Aluno;
-
 import java.util.Arrays;
 
 public class Vetor {
 
-    private Aluno[] alunos = new Aluno[100];
+    private Aluno[] alunos;
     private int totalDeAlunos = 0;
+
+
+    Vetor() {
+        this.alunos = new Aluno[100];
+    }
+
+    Vetor(int size) {
+        this.alunos = new Aluno[size];
+    }
 
     /*
         Quanto mais alunos tem no vetor mais demorada vai ser a insersão
@@ -39,7 +46,7 @@ public class Vetor {
          - É necessario pegar a posição que se quer  inserir e mover as posições ocupadas para a direita
          - a complexidade aqui é O(n) pois tbm depende da quantidade de elementos no array
      */
-    public void adiciona(int posicao, Aluno aluno) {
+    void adiciona(int posicao, Aluno aluno) {
         this.garanteEspaco();
         if(!posicaoValida(posicao)) {
             throw new IllegalArgumentException("posicao invalida");
