@@ -35,7 +35,7 @@ public class Vetor {
     /*
         - Aqui temos um algoritmo de tempo constante pois estamos guardando sempre a posicao vazia em uma variavel
      */
-    public void adiciona(Aluno aluno) {
+    void adiciona(Aluno aluno) {
         this.garanteEspaco();
         this.alunos[totalDeAlunos] = aluno;
         totalDeAlunos++;
