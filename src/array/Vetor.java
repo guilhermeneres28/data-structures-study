@@ -1,13 +1,20 @@
 package array;
 
-import array.Aluno;
-
 import java.util.Arrays;
 
 public class Vetor {
 
-    private Aluno[] alunos = new Aluno[100];
+    private Aluno[] alunos;
     private int totalDeAlunos = 0;
+
+
+    Vetor() {
+        this.alunos = new Aluno[100];
+    }
+
+    Vetor(int size) {
+        this.alunos = new Aluno[size];
+    }
 
     /*
         Quanto mais alunos tem no vetor mais demorada vai ser a insersão
@@ -39,15 +46,14 @@ public class Vetor {
          - É necessario pegar a posição que se quer  inserir e mover as posições ocupadas para a direita
          - a complexidade aqui é O(n) pois tbm depende da quantidade de elementos no array
      */
-    public void adiciona(int posicao, Aluno aluno) {
+    void adiciona(int posicao, Aluno aluno) {
         this.garanteEspaco();
         if(!posicaoValida(posicao)) {
             throw new IllegalArgumentException("posicao invalida");
         }
 
-        for(int i = totalDeAlunos -1; i >= posicao; i-=1) {
-            alunos[i+1] = alunos[i];
-        }
+        if (totalDeAlunos - posicao >= 0)
+            System.arraycopy(alunos, posicao, alunos, posicao + 1, totalDeAlunos - posicao);
         alunos[posicao] = aluno;
     }
 
@@ -59,15 +65,14 @@ public class Vetor {
     }
 
     public void remove(int posicao) {
-        for(int i = posicao; i < this.totalDeAlunos; i++) {
-            this.alunos[i] = this.alunos[i+1];
-        }
+        if (this.totalDeAlunos - posicao >= 0)
+            System.arraycopy(this.alunos, posicao + 1, this.alunos, posicao, this.totalDeAlunos - posicao);
         totalDeAlunos--;
     }
     /*
         A complexidade aqui sempre vai ser O(n) pois o tempo de execução varia de acordo com a quantidade de elementos
      */
-    public boolean contem(Aluno aluno) {
+    boolean contem(Aluno aluno) {
         for (int i = 0; i < totalDeAlunos; i++) {
             if(aluno.equals(alunos[i])) {
                 return true;
@@ -96,9 +101,7 @@ public class Vetor {
     private void garanteEspaco() {
         if(totalDeAlunos == alunos.length) {
             Aluno[] novoArray = new Aluno[alunos.length * 2];
-            for(int i = 0; i < alunos.length; i++) {
-                novoArray[i] = alunos[i];
-            }
+            System.arraycopy(alunos, 0, novoArray, 0, alunos.length);
             this.alunos = novoArray;
         }
     }
