@@ -81,7 +81,7 @@ public class Vetor {
         return false;
     }
 
-    public int tamanho() {
+    int tamanho() {
         return totalDeAlunos;
     }
 
