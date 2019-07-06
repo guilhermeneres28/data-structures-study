@@ -35,7 +35,7 @@ public class Vetor {
     /*
         - Aqui temos um algoritmo de tempo constante pois estamos guardando sempre a posicao vazia em uma variavel
      */
-    void adiciona(Aluno aluno) {
+    public void adiciona(Aluno aluno) {
         this.garanteEspaco();
         this.alunos[totalDeAlunos] = aluno;
         totalDeAlunos++;
@@ -52,8 +52,9 @@ public class Vetor {
             throw new IllegalArgumentException("posicao invalida");
         }
 
-        if (totalDeAlunos - posicao >= 0)
-            System.arraycopy(alunos, posicao, alunos, posicao + 1, totalDeAlunos - posicao);
+        for(int i = totalDeAlunos -1; i >= posicao; i-=1) {
+            alunos[i+1] = alunos[i];
+        }
         alunos[posicao] = aluno;
     }
 
@@ -65,14 +66,15 @@ public class Vetor {
     }
 
     public void remove(int posicao) {
-        if (this.totalDeAlunos - posicao >= 0)
-            System.arraycopy(this.alunos, posicao + 1, this.alunos, posicao, this.totalDeAlunos - posicao);
+        for(int i = posicao; i < this.totalDeAlunos; i++) {
+            this.alunos[i] = this.alunos[i+1];
+        }
         totalDeAlunos--;
     }
     /*
         A complexidade aqui sempre vai ser O(n) pois o tempo de execução varia de acordo com a quantidade de elementos
      */
-    boolean contem(Aluno aluno) {
+    public boolean contem(Aluno aluno) {
         for (int i = 0; i < totalDeAlunos; i++) {
             if(aluno.equals(alunos[i])) {
                 return true;
@@ -81,7 +83,7 @@ public class Vetor {
         return false;
     }
 
-    int tamanho() {
+    public int tamanho() {
         return totalDeAlunos;
     }
 
@@ -101,7 +103,9 @@ public class Vetor {
     private void garanteEspaco() {
         if(totalDeAlunos == alunos.length) {
             Aluno[] novoArray = new Aluno[alunos.length * 2];
-            System.arraycopy(alunos, 0, novoArray, 0, alunos.length);
+            for(int i = 0; i < alunos.length; i++) {
+                novoArray[i] = alunos[i];
+            }
             this.alunos = novoArray;
         }
     }
